@@ -1,0 +1,50 @@
+table {
+    width: 100%;
+}
+
+td {
+    width: 10%;
+    position: relative;
+}
+
+td:after {
+    content: '';
+    display: block;
+    margin-top: 100%;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #e6e6ea;
+}
+
+td .start {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #7bc043;
+}
+
+td .end {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fe4a49;
+}
+
+.highlight {
+    background-color: blue;
+    color: blue;
+}
+
+.path {
+    color: #7bc043;
+}
