@@ -1,6 +1,9 @@
+const gridH = 9;
+const gridW = 19;
+
 function createTable(){
-    height = 10;
-    width = 10;
+    height = gridH;
+    width = gridW;
     console.log("Creating Table!");
     let matrix = {};
     var i;
@@ -153,23 +156,18 @@ function getNeighbours(grid, posNode){
 }
 
 function createGraph(matrix){
-    let width = 10;
-    let height = 10;
+    let width = gridW;
+    let height = gridH;
     let path = findPath(matrix, width, height);
+    if(path[0] == undefined){
+        alert("No Path Available.")
+    }
     console.log(path)
     for(var x in path){
         $("#" + path[x].pos.x + "-" + path[x].pos.y).addClass("path")
     }
 }
 
-function sleep(ms){
-    var start = new Date().getTime();
-    for(var i = 0; i < 1e7; i++){
-        if ((new Date().getTime() - start) > ms){
-            break;
-        }
-    }
-}
 $(document).ready(function(){
     matrix = createTable();
     $("td").mouseover(function(e) {
@@ -180,7 +178,12 @@ $(document).ready(function(){
         var clickedCell= $(e.target).closest("td");
         clickedCell.addClass("highlight");
         console.log(clickedCell.text())
-        matrix[clickedCell.text()] = "1";
+        if(clickedCell.text() == "[0,0]"){
+        }else if(clickedCell.text() == "[" + (width - 1)  + "," + (height -1) + "]"){
+            
+        }else{
+            matrix[clickedCell.text()] = "1";
+        }
     });
 
     $("#reset").click(function(){

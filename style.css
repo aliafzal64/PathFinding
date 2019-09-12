@@ -1,10 +1,12 @@
 table {
     width: 100%;
-}
+    border: 1px solid black}
 
 td {
-    width: 10%;
+    width: 5%;
+    height: 5%;
     position: relative;
+    border: 1px solid black
 }
 
 td:after {
@@ -19,7 +21,7 @@ td:after {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #e6e6ea;
+    color: #e6e6ea;
 }
 
 td .start {
@@ -29,6 +31,7 @@ td .start {
     left: 0;
     right: 0;
     background: #7bc043;
+    color: #7bc043;
 }
 
 td .end {
@@ -38,13 +41,15 @@ td .end {
     left: 0;
     right: 0;
     background: #fe4a49;
+    color: #fe4a49;
 }
 
 .highlight {
-    background-color: blue;
-    color: blue;
+    background-color: grey;
+    color: grey;
 }
 
 .path {
     color: #7bc043;
+    background-color: #7bc043;
 }
